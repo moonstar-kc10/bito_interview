@@ -1,5 +1,5 @@
 *** Settings ***
-Documentation    Searched bitopro website via google browser
+Documentation    Calculate numbers by android device
 Library          AppiumLibrary
 
 *** Variables ***
