@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 3.2.1 (Python 3.7.7 on win32)" generated="20220720 00:20:51.616" rpa="false">
+<suite id="s1" name="google serached python seleium RF" source="D:\workspace\Astros201\google_serached_python_seleium_RF.robot">
+<test id="s1-t1" name="Valid Searched Result">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${URL_GOOGLE}</arg>
+<arg>${BROWSER}</arg>
+</arguments>
+<msg timestamp="20220720 00:20:51.773" level="INFO">Opening browser 'Chrome' to base url 'https://www.google.com'.</msg>
+<status status="PASS" starttime="20220720 00:20:51.773" endtime="20220720 00:20:53.854"></status>
+</kw>
+<kw name="Title Should Be" library="SeleniumLibrary">
+<doc>Verifies that the current page title equals ``title``.</doc>
+<arguments>
+<arg>Google</arg>
+</arguments>
+<msg timestamp="20220720 00:20:53.860" level="INFO">Page title is 'Google'.</msg>
+<status status="PASS" starttime="20220720 00:20:53.855" endtime="20220720 00:20:53.860"></status>
+</kw>
+<kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
+<doc>Waits until the element ``locator`` is visible.</doc>
+<arguments>
+<arg>${GOOGLE_SEARCHED_BAR}</arg>
+<arg>${TIMEOUT}</arg>
+</arguments>
+<status status="PASS" starttime="20220720 00:20:53.861" endtime="20220720 00:20:53.892"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${GOOGLE_SEARCHED_BAR}</arg>
+<arg>BitoPro</arg>
+</arguments>
+<msg timestamp="20220720 00:20:53.893" level="INFO">Typing text 'BitoPro' into text field 'name=q'.</msg>
+<status status="PASS" starttime="20220720 00:20:53.893" endtime="20220720 00:20:53.981"></status>
+</kw>
+<kw name="Press Keys" library="SeleniumLibrary">
+<doc>Simulates the user pressing key(s) to an element or on the active browser.</doc>
+<arguments>
+<arg>${GOOGLE_SEARCHED_BAR}</arg>
+<arg>RETURN</arg>
+</arguments>
+<msg timestamp="20220720 00:20:53.982" level="INFO">Sending key(s) ('RETURN',) to name=q element.</msg>
+<msg timestamp="20220720 00:20:54.255" level="INFO">Pressing special key RETURN to element.</msg>
+<msg timestamp="20220720 00:20:54.255" level="INFO">Releasing special key RETURN.</msg>
+<status status="PASS" starttime="20220720 00:20:53.982" endtime="20220720 00:20:55.223"></status>
+</kw>
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>class=LC20lb.MBeuO.DKV0Md</arg>
+</arguments>
+<assign>
+<var>${text}</var>
+</assign>
+<msg timestamp="20220720 00:20:55.249" level="INFO">${text} = BitoPro 台灣幣託交易所</msg>
+<status status="PASS" starttime="20220720 00:20:55.224" endtime="20220720 00:20:55.249"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>'${text}'=='BitoPro 台灣幣託交易所'</arg>
+</arguments>
+<status status="PASS" starttime="20220720 00:20:55.249" endtime="20220720 00:20:55.250"></status>
+</kw>
+<kw name="Get Element Attribute" library="SeleniumLibrary">
+<doc>Returns the value of ``attribute`` from the element ``locator``.</doc>
+<arguments>
+<arg>xpath=//*[@id="rso"]/div[1]/div/div/div/div/div/div[1]/a</arg>
+<arg>href</arg>
+</arguments>
+<assign>
+<var>${link}</var>
+</assign>
+<msg timestamp="20220720 00:20:55.270" level="INFO">${link} = https://www.bitopro.com/</msg>
+<status status="PASS" starttime="20220720 00:20:55.250" endtime="20220720 00:20:55.270"></status>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<doc>Fails if the given condition is not true.</doc>
+<arguments>
+<arg>'${link}'=='https://www.bitopro.com/'</arg>
+</arguments>
+<status status="PASS" starttime="20220720 00:20:55.271" endtime="20220720 00:20:55.271"></status>
+</kw>
+<status status="PASS" starttime="20220720 00:20:51.772" endtime="20220720 00:20:55.272" critical="yes"></status>
+</test>
+<kw name="Close Browser" library="SeleniumLibrary" type="teardown">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20220720 00:20:55.274" endtime="20220720 00:20:57.417"></status>
+</kw>
+<doc>Searched bitopro website via google browser</doc>
+<status status="PASS" starttime="20220720 00:20:51.618" endtime="20220720 00:20:57.417"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0">Critical Tests</stat>
+<stat pass="1" fail="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" id="s1" name="google serached python seleium RF">google serached python seleium RF</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
